@@ -3,7 +3,7 @@
 Gateway是一个基于OpenResty的API网关。除Nginx的基本功能外，它还可用于API监控、访问控制(鉴权、WAF)、流量筛选、访问限速、AB测试、动态分流等。它有以下特性：
 
 - 提供了一套默认的Dashboard用于动态管理各种功能和配置
-- 提供了API接口用于实现第三方服务(如个性化运维需求、第三方Dashboard等)
+- 提供了API接口用于实现第三方服务(如个性化运维需求)
 - 可根据规范编写自定义插件扩展Gateway功能
 
 
@@ -15,7 +15,7 @@ Gateway是一个基于OpenResty的API网关。除Nginx的基本功能外，它�
     - Orange的监控插件需要统计http的某些状态数据，所以需要编译OpenResty时添加`--with-http_stub_status_module`
     - 由于使用了*_block指令，所以OpenResty的版本最好在1.9.7.3以上.
 - MySQL
-    - 配置存储和集群扩展需要MySQL支持。从0.2.0版本开始，Orange去除了本地文件存储的方式，目前仅提供MySQL存储支持.
+    - 配置存储和扩展 目前提供MySQL存储，redis存储支持.
 - redis集群支持
     redis模块编译：
       gcc redis_slot.c -fPIC -shared -o libredis_slot.so -I/home/wuwenhui/software/openresty/luajit/include/luajit-2.1
@@ -27,14 +27,14 @@ Gateway是一个基于OpenResty的API网关。除Nginx的基本功能外，它�
 #### 数据表导入MySQL
 
 - 在MySQL中创建数据库，名为gateway
-- 将与当前代码版本配套的SQL脚本(如install/orange-v0.6.3.sql)导入到gateway
+- 将与当前代码版本配套的SQL脚本(如install/gateway-v0.1.sql)导入到gateway
 库中
 
 #### 修改配置文件
 
-Gateway有**两个**配置文件，一个是`conf/gateway.conf`，用于配置插件、存储方式和内部集成的默认Dashboard，另一个是`conf/nginx.conf`用于配置Nginx(OpenResty).
+Gateway有**两个**配置文件，一个是`conf/gateway.conf`，用于配置插件、存储方式和，另一个是`conf/nginx.conf`用于配置Nginx(OpenResty).
 
-orange.conf的配置如下，请按需修改:
+gateway.conf的配置如下，请按需修改:
 
 ```javascript
 {
@@ -53,7 +53,7 @@ orange.conf的配置如下，请按需修改:
         "kvstore"
     ],
 
-    "store": "mysql",// 支持mysql，redis存储
+    "store": "mysql",// 支持mysql，redis存储存储时配置store_redis
     "store_mysql": { //MySQL配置
         "timeout": 5000,
         "connect_config": {//连接信息，请修改为需要的配置
