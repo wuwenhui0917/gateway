@@ -63,12 +63,12 @@ function RedisStore:new(options)
         end    
     end    
 
-    -- self.redisconfig = {};
-    -- self.redisconfig.name="gateway-redis";
-    -- self.redisconfig.serv_list = serv_list;
-    self.redisconfig=config2;
+    self.redisconfig = {};
+    self.redisconfig.name="gateway-redis";
+    self.redisconfig.serv_list = serv_list;
+    -- self.redisconfig=config2;
     -- self.redisconfige = config;
-    ngx.log(ngx.INFO,"redis..........."..json.encode(self.redisconfig));
+    ngx.log(ngx.INFO,"configinfffffffffffffffffffffffffffffffffffffffffffffffffffffffff"..json.encode(self.redisconfig));
 
     
 
@@ -103,7 +103,7 @@ function RedisStore:new(options)
     -- self.redis = redis_cluster:new(config);
     -- self.redis:init_pipeline()
     -- self.redis:set("k1", "hello");
-    -- self.redis.close();
+    -- self.redis:close();
     -- local res = self.redis:commit_pipeline();
     -- local cjson = require "cjson"
     -- ngx.log(ngx.INFO,cjson.encode(res));
@@ -116,19 +116,37 @@ end
 
 
 function RedisStore:getRedis()
-    local red = redis:new()  --创建一个对象，注意是用冒号调用的
-    --设置超时（毫秒）  
-    red:set_timeout(10000)
-    --建立连接  
-    local ip = "127.0.0.1"  
-    local port = 10201
-    local ok, err = red:connect(ip, port)
-    ngx.log(ngx.INFO,"redis  connection  ok");
-    if ok  then
-        return red
-    else
-        return nil
-    end        
+
+    ngx.log(ngx.INFO,"getRedis  connection  ............................................");
+
+    if self.cluster then
+
+        local redcluster,error = redis_cluster:new(self.redisconfig);
+        if redcluster  then
+            return redcluster
+        else
+            return nil
+        end        
+    else 
+       
+        local red = redis:new()  --创建一个对象，注意是用冒号调用的
+        --设置超时（毫秒）  
+        red:set_timeout(10000)
+        --建立连接  
+        local ip = "127.0.0.1"  
+        local port = 10201
+        local ok, err = red:connect(ip, port)
+        ngx.log(ngx.INFO,"redis  connection  ok");
+        if red  then
+            return red
+        else
+            return nil
+        end        
+
+
+    end 
+
+    
 
 
 end    
