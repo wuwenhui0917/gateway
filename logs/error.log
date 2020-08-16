@@ -2652,3 +2652,459 @@ coroutine 0:
 2020/08/03 09:55:17 [info] 30823#0: *10 [lua] handler.lua:100: access(): [AB_Divide] ....................../a/b, client: 127.0.0.1, server: , request: "GET /a/b HTTP/1.1", host: "127.0.0.1:9090"
 2020/08/03 09:55:17 [info] 30823#0: *10 [lua] handler.lua:115: access(): [AB_Divide] 转发到灰度 http://a_upstream, client: 127.0.0.1, server: , request: "GET /a/b HTTP/1.1", host: "127.0.0.1:9090"
 2020/08/03 09:56:17 [info] 30821#0: *13 client timed out (110: Connection timed out) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:9090
+2020/08/16 10:27:40 [notice] 28391#0: signal process started
+2020/08/16 10:27:40 [alert] 28391#0: kill(30819, 15) failed (3: No such process)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:40 [emerg] 28394#0: still could not bind()
+2020/08/16 10:27:44 [notice] 28400#0: signal process started
+2020/08/16 10:27:44 [alert] 28400#0: kill(30819, 15) failed (3: No such process)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:27:44 [emerg] 28403#0: still could not bind()
+2020/08/16 10:28:06 [notice] 28413#0: signal process started
+2020/08/16 10:28:06 [alert] 28413#0: kill(30819, 15) failed (3: No such process)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9090 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9001 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: bind() to 0.0.0.0:9002 failed (98: Address already in use)
+2020/08/16 10:28:07 [emerg] 28416#0: still could not bind()
+2020/08/16 10:29:05 [notice] 28438#0: signal process started
+2020/08/16 10:29:05 [alert] 28438#0: kill(30819, 15) failed (3: No such process)
+2020/08/16 10:29:05 [error] 28444#0: *1 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:05 [info] 28444#0: *1 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:05 [error] 28446#0: *2 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:05 [info] 28446#0: *2 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:05 [error] 28443#0: *3 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:05 [error] 28445#0: *4 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:05 [info] 28445#0: *4 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:05 [info] 28443#0: *3 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:156: init(): ddddddddddddddddddd{"serv_list":[{"ip":"127.0.0.1","port":30201},{"ip":"127.0.0.1","port":30202},{"ip":"127.0.0.1","port":30203},{"ip":"127.0.0.1","port":30204},{"ip":"127.0.0.1","port":30205},{"ip":"127.0.0.1","port":30206}],"name":"gateway-adapter"}, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111monitor, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:190: query(): redismonitorvalue="1", context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......monitorenbale, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keymeta, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is string, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagmonitor keystagselector, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:417: init_selectors_of_plugin(): &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is {"time":"2020-01-16 10:11:39","enable":true,"type":1,"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"url监控","handle":{"continue":true,"log":false},"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"]}, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:28: get_selector(): selectid=selector_c298be4e-c1ff-4359-8253-3f761681c44e{"time":"2020-01-16 10:11:39","enable":true,"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"],"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"conditions":[{"value":"\/api","operator":"match","type":"URI"}],"type":0},"name":"url监控","handle":{"continue":true,"log":false},"type":1}, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:247: getMHashInfo(): getHashByKeyTag, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:257: getMHashInfo(): %%%%%%%%%%%%%%%%%%getMHashInfomonitor_plugin:value==["{\"time\":\"2020-01-16 10:11:33\",\"enable\":true,\"id\":\"91f62fa2-0c2d-424c-97bc-249e338f75f1\",\"judge\":{\"conditions\":[{\"value\":\"\\\/api\",\"operator\":\"match\",\"type\":\"URI\"}],\"type\":0},\"name\":\"api监控\",\"handle\":{\"continue\":true,\"log\":false}}"], context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:55: get_rules_of_selector():  rules of selector, typetable len=1, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:325: init_rules_of_selector(): monitor.selector.c298be4e-c1ff-4359-8253-3f761681c44e.rules[{"time":"2020-01-16 10:11:33","enable":true,"id":"91f62fa2-0c2d-424c-97bc-249e338f75f1","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"api监控","handle":{"continue":true,"log":false}}], context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:569: load data of plugin[monitor] success, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111ab_divide, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:190: query(): redisab_dividevalue="1", context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......ab_divideenbale, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------ab_divide_plugin keymeta, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is userdata, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:386: init_meta_of_plugin(): init local plugin[ab_divide] meta error, err:bad value type, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagab_divide keystagselector, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:566: load data of plugin[ab_divide] error, init_enable:true init_meta:false init_selectors_and_rules:true, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111kvstore, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_store.lua:190: query(): rediskvstorevalue=null, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......kvstoreenbale, context: ngx.timer
+2020/08/16 10:29:06 [info] 28443#0: *5 [lua] redis_dao.lua:559: load data of plugin[kvstore] success, context: ngx.timer
+2020/08/16 10:29:14 [notice] 28456#0: signal process started
+2020/08/16 10:29:14 [error] 28461#0: *1 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:14 [info] 28461#0: *1 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:14 [error] 28464#0: *2 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:14 [info] 28464#0: *2 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:14 [error] 28462#0: *3 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:14 [info] 28462#0: *3 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:14 [error] 28463#0: *4 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:14 [info] 28463#0: *4 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:156: init(): ddddddddddddddddddd{"serv_list":[{"ip":"127.0.0.1","port":30201},{"ip":"127.0.0.1","port":30202},{"ip":"127.0.0.1","port":30203},{"ip":"127.0.0.1","port":30204},{"ip":"127.0.0.1","port":30205},{"ip":"127.0.0.1","port":30206}],"name":"gateway-adapter"}, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111monitor, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:190: query(): redismonitorvalue="1", context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......monitorenbale, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keymeta, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is string, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagmonitor keystagselector, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:417: init_selectors_of_plugin(): &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is {"time":"2020-01-16 10:11:39","enable":true,"type":1,"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"url监控","handle":{"continue":true,"log":false},"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"]}, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:28: get_selector(): selectid=selector_c298be4e-c1ff-4359-8253-3f761681c44e{"time":"2020-01-16 10:11:39","enable":true,"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"],"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"conditions":[{"value":"\/api","operator":"match","type":"URI"}],"type":0},"name":"url监控","handle":{"continue":true,"log":false},"type":1}, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:247: getMHashInfo(): getHashByKeyTag, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:257: getMHashInfo(): %%%%%%%%%%%%%%%%%%getMHashInfomonitor_plugin:value==["{\"time\":\"2020-01-16 10:11:33\",\"enable\":true,\"id\":\"91f62fa2-0c2d-424c-97bc-249e338f75f1\",\"judge\":{\"conditions\":[{\"value\":\"\\\/api\",\"operator\":\"match\",\"type\":\"URI\"}],\"type\":0},\"name\":\"api监控\",\"handle\":{\"continue\":true,\"log\":false}}"], context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:55: get_rules_of_selector():  rules of selector, typetable len=1, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:325: init_rules_of_selector(): monitor.selector.c298be4e-c1ff-4359-8253-3f761681c44e.rules[{"time":"2020-01-16 10:11:33","enable":true,"id":"91f62fa2-0c2d-424c-97bc-249e338f75f1","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"api监控","handle":{"continue":true,"log":false}}], context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:569: load data of plugin[monitor] success, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111ab_divide, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:190: query(): redisab_dividevalue="1", context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......ab_divideenbale, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------ab_divide_plugin keymeta, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is userdata, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:386: init_meta_of_plugin(): init local plugin[ab_divide] meta error, err:bad value type, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagab_divide keystagselector, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:566: load data of plugin[ab_divide] error, init_enable:true init_meta:false init_selectors_and_rules:true, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111kvstore, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_store.lua:190: query(): rediskvstorevalue=null, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......kvstoreenbale, context: ngx.timer
+2020/08/16 10:29:15 [info] 28461#0: *5 [lua] redis_dao.lua:559: load data of plugin[kvstore] success, context: ngx.timer
+2020/08/16 10:29:26 [notice] 28476#0: signal process started
+2020/08/16 10:29:27 [error] 28481#0: *1 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:27 [info] 28481#0: *1 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:27 [error] 28483#0: *2 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:27 [info] 28483#0: *2 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:27 [error] 28484#0: *3 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:27 [info] 28484#0: *3 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:27 [error] 28482#0: *4 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:29:27 [info] 28482#0: *4 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:156: init(): ddddddddddddddddddd{"serv_list":[{"ip":"127.0.0.1","port":30201},{"ip":"127.0.0.1","port":30202},{"ip":"127.0.0.1","port":30203},{"ip":"127.0.0.1","port":30204},{"ip":"127.0.0.1","port":30205},{"ip":"127.0.0.1","port":30206}],"name":"gateway-adapter"}, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111monitor, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:190: query(): redismonitorvalue="1", context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......monitorenbale, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keymeta, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is string, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagmonitor keystagselector, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:417: init_selectors_of_plugin(): &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is {"time":"2020-01-16 10:11:39","enable":true,"type":1,"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"url监控","handle":{"continue":true,"log":false},"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"]}, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:28: get_selector(): selectid=selector_c298be4e-c1ff-4359-8253-3f761681c44e{"time":"2020-01-16 10:11:39","enable":true,"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"],"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"conditions":[{"value":"\/api","operator":"match","type":"URI"}],"type":0},"name":"url监控","handle":{"continue":true,"log":false},"type":1}, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:247: getMHashInfo(): getHashByKeyTag, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:257: getMHashInfo(): %%%%%%%%%%%%%%%%%%getMHashInfomonitor_plugin:value==["{\"time\":\"2020-01-16 10:11:33\",\"enable\":true,\"id\":\"91f62fa2-0c2d-424c-97bc-249e338f75f1\",\"judge\":{\"conditions\":[{\"value\":\"\\\/api\",\"operator\":\"match\",\"type\":\"URI\"}],\"type\":0},\"name\":\"api监控\",\"handle\":{\"continue\":true,\"log\":false}}"], context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:55: get_rules_of_selector():  rules of selector, typetable len=1, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:325: init_rules_of_selector(): monitor.selector.c298be4e-c1ff-4359-8253-3f761681c44e.rules[{"time":"2020-01-16 10:11:33","enable":true,"id":"91f62fa2-0c2d-424c-97bc-249e338f75f1","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"api监控","handle":{"continue":true,"log":false}}], context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:569: load data of plugin[monitor] success, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111ab_divide, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:190: query(): redisab_dividevalue="1", context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......ab_divideenbale, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------ab_divide_plugin keymeta, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is userdata, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:386: init_meta_of_plugin(): init local plugin[ab_divide] meta error, err:bad value type, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagab_divide keystagselector, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:566: load data of plugin[ab_divide] error, init_enable:true init_meta:false init_selectors_and_rules:true, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111kvstore, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_store.lua:190: query(): rediskvstorevalue=null, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......kvstoreenbale, context: ngx.timer
+2020/08/16 10:29:28 [info] 28481#0: *5 [lua] redis_dao.lua:559: load data of plugin[kvstore] success, context: ngx.timer
+2020/08/16 10:30:02 [info] 28481#0: *10 [lua] handler.lua:83: access(): 未配置规则，不进行灰度处理, client: 127.0.0.1, server: , request: "GET /update HTTP/1.1", host: "127.0.0.1:9090"
+2020/08/16 10:30:37 [info] 28483#0: *11 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:9090
+2020/08/16 10:30:37 [info] 28481#0: *10 [lua] gateway.lua:228: update(): 更新, client: 127.0.0.1, server: , request: "GET /udate HTTP/1.1", host: "127.0.0.1:9090"
+2020/08/16 10:30:37 [error] 28481#0: *10 open() "/home/wuwenhui/works/lua/gateway/gateway/html/udate" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /udate HTTP/1.1", host: "127.0.0.1:9090"
+2020/08/16 10:30:48 [info] 28481#0: *10 [lua] gateway.lua:228: update(): 更新, client: 127.0.0.1, server: , request: "GET /udate HTTP/1.1", host: "127.0.0.1:9090"
+2020/08/16 10:30:48 [error] 28481#0: *10 open() "/home/wuwenhui/works/lua/gateway/gateway/html/udate" failed (2: No such file or directory), client: 127.0.0.1, server: , request: "GET /udate HTTP/1.1", host: "127.0.0.1:9090"
+2020/08/16 10:30:48 [info] 28484#0: *14 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:9090
+2020/08/16 10:31:11 [info] 28482#0: *15 client closed connection while waiting for request, client: 127.0.0.1, server: 0.0.0.0:9090
+2020/08/16 10:32:11 [info] 28482#0: *16 client timed out (110: Connection timed out) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:9090
+2020/08/16 10:32:45 [notice] 28689#0: signal process started
+2020/08/16 10:32:45 [error] 28697#0: *1 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:32:45 [info] 28697#0: *1 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:32:45 [error] 28695#0: *2 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:32:45 [info] 28695#0: *2 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:32:45 [error] 28696#0: *3 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:32:45 [info] 28696#0: *3 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:32:45 [error] 28694#0: *4 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:32:45 [info] 28694#0: *4 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:156: init(): ddddddddddddddddddd{"serv_list":[{"ip":"127.0.0.1","port":30201},{"ip":"127.0.0.1","port":30202},{"ip":"127.0.0.1","port":30203},{"ip":"127.0.0.1","port":30204},{"ip":"127.0.0.1","port":30205},{"ip":"127.0.0.1","port":30206}],"name":"gateway-adapter"}, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111monitor, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:190: query(): redismonitorvalue="1", context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......monitorenbale, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keymeta, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is string, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagmonitor keystagselector, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:417: init_selectors_of_plugin(): &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is {"time":"2020-01-16 10:11:39","enable":true,"type":1,"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"url监控","handle":{"continue":true,"log":false},"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"]}, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:28: get_selector(): selectid=selector_c298be4e-c1ff-4359-8253-3f761681c44e{"time":"2020-01-16 10:11:39","enable":true,"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"],"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"conditions":[{"value":"\/api","operator":"match","type":"URI"}],"type":0},"name":"url监控","handle":{"continue":true,"log":false},"type":1}, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:247: getMHashInfo(): getHashByKeyTag, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:257: getMHashInfo(): %%%%%%%%%%%%%%%%%%getMHashInfomonitor_plugin:value==["{\"time\":\"2020-01-16 10:11:33\",\"enable\":true,\"id\":\"91f62fa2-0c2d-424c-97bc-249e338f75f1\",\"judge\":{\"conditions\":[{\"value\":\"\\\/api\",\"operator\":\"match\",\"type\":\"URI\"}],\"type\":0},\"name\":\"api监控\",\"handle\":{\"continue\":true,\"log\":false}}"], context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:55: get_rules_of_selector():  rules of selector, typetable len=1, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:325: init_rules_of_selector(): monitor.selector.c298be4e-c1ff-4359-8253-3f761681c44e.rules[{"time":"2020-01-16 10:11:33","enable":true,"id":"91f62fa2-0c2d-424c-97bc-249e338f75f1","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"api监控","handle":{"continue":true,"log":false}}], context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:569: load data of plugin[monitor] success, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111ab_divide, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:190: query(): redisab_dividevalue="1", context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......ab_divideenbale, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------ab_divide_plugin keymeta, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is userdata, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:386: init_meta_of_plugin(): init local plugin[ab_divide] meta error, err:bad value type, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagab_divide keystagselector, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:566: load data of plugin[ab_divide] error, init_enable:true init_meta:false init_selectors_and_rules:true, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111kvstore, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_store.lua:190: query(): rediskvstorevalue=null, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......kvstoreenbale, context: ngx.timer
+2020/08/16 10:32:46 [info] 28694#0: *5 [lua] redis_dao.lua:559: load data of plugin[kvstore] success, context: ngx.timer
+2020/08/16 10:33:55 [info] 28694#0: *11 client timed out (110: Connection timed out) while waiting for request, client: 127.0.0.1, server: 0.0.0.0:9090
+2020/08/16 10:41:41 [emerg] 28960#0: unknown directive "api" in /home/wuwenhui/works/lua/gateway/gateway/./conf/nginx.conf:215
+2020/08/16 10:41:42 [emerg] 28963#0: unknown directive "api" in /home/wuwenhui/works/lua/gateway/gateway/./conf/nginx.conf:215
+2020/08/16 10:42:12 [notice] 29036#0: signal process started
+2020/08/16 10:42:12 [error] 29039#0: [lua] gateway.lua:85: init(): Startup error: ./gateway/utils/utils.lua:192: ./gateway/utils/handle.lua:5: module 'resty.template' not found:
+	no field package.preload['resty.template']
+	no file '/home/wuwenhui/works/lua/gateway/gateway/lor/resty/template.lua'
+	no file '/home/wuwenhui/software/openresty/lualib/resty/template.lua'
+	no file '../resty/template.lua'
+	no file '/usr/local/lor/resty/template.lua'
+	no file '/home/wuwenhui/software/openresty/site/lualib/resty/template.ljbc'
+	no file '/home/wuwenhui/software/openresty/site/lualib/resty/template/init.ljbc'
+	no file '/home/wuwenhui/software/openresty/lualib/resty/template.ljbc'
+	no file '/home/wuwenhui/software/openresty/lualib/resty/template/init.ljbc'
+	no file '/home/wuwenhui/software/openresty/site/lualib/resty/template.lua'
+	no file '/home/wuwenhui/software/openresty/site/lualib/resty/template/init.lua'
+	no file '/home/wuwenhui/software/openresty/lualib/resty/template.lua'
+	no file '/home/wuwenhui/software/openresty/lualib/resty/template/init.lua'
+	no file './resty/template.lua'
+	no file '/home/wuwenhui/software/openresty/luajit/share/luajit-2.1.0-beta3/resty/template.lua'
+	no file '/usr/local/share/lua/5.1/resty/template.lua'
+	no file '/usr/local/share/lua/5.1/resty/template/init.lua'
+	no file '/home/wuwenhui/software/openresty/luajit/share/lua/5.1/resty/template.lua'
+	no file '/home/wuwenhui/software/openresty/luajit/share/lua/5.1/resty/template/init.lua'
+	no file '/home/wuwenhui/software/openresty/site/lualib/resty/template.so'
+	no file '/home/wuwenhui/software/openresty/lualib/resty/template.so'
+	no file './resty/template.so'
+	no file '/usr/local/lib/lua/5.1/resty/template.so'
+	no file '/home/wuwenhui/software/openresty/luajit/lib/lua/5.1/resty/template.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+	no file '/home/wuwenhui/software/openresty/site/lualib/resty.so'
+	no file '/home/wuwenhui/software/openresty/lualib/resty.so'
+	no file './resty.so'
+	no file '/usr/local/lib/lua/5.1/resty.so'
+	no file '/home/wuwenhui/software/openresty/luajit/lib/lua/5.1/resty.so'
+	no file '/usr/local/lib/lua/5.1/loadall.so'
+2020/08/16 10:45:20 [error] 29153#0: *1 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:20 [info] 29153#0: *1 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:20 [error] 29152#0: *2 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:20 [info] 29152#0: *2 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:20 [error] 29150#0: *3 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:20 [info] 29150#0: *3 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:20 [error] 29151#0: *4 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:20 [info] 29151#0: *4 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:156: init(): ddddddddddddddddddd{"serv_list":[{"ip":"127.0.0.1","port":30201},{"ip":"127.0.0.1","port":30202},{"ip":"127.0.0.1","port":30203},{"ip":"127.0.0.1","port":30204},{"ip":"127.0.0.1","port":30205},{"ip":"127.0.0.1","port":30206}],"name":"gateway-adapter"}, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111monitor, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:190: query(): redismonitorvalue="1", context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......monitorenbale, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keymeta, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is string, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagmonitor keystagselector, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:417: init_selectors_of_plugin(): &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is {"time":"2020-01-16 10:11:39","enable":true,"type":1,"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"url监控","handle":{"continue":true,"log":false},"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"]}, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:28: get_selector(): selectid=selector_c298be4e-c1ff-4359-8253-3f761681c44e{"time":"2020-01-16 10:11:39","enable":true,"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"],"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"conditions":[{"value":"\/api","operator":"match","type":"URI"}],"type":0},"name":"url监控","handle":{"continue":true,"log":false},"type":1}, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:247: getMHashInfo(): getHashByKeyTag, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:257: getMHashInfo(): %%%%%%%%%%%%%%%%%%getMHashInfomonitor_plugin:value==["{\"time\":\"2020-01-16 10:11:33\",\"enable\":true,\"id\":\"91f62fa2-0c2d-424c-97bc-249e338f75f1\",\"judge\":{\"conditions\":[{\"value\":\"\\\/api\",\"operator\":\"match\",\"type\":\"URI\"}],\"type\":0},\"name\":\"api监控\",\"handle\":{\"continue\":true,\"log\":false}}"], context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:55: get_rules_of_selector():  rules of selector, typetable len=1, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:325: init_rules_of_selector(): monitor.selector.c298be4e-c1ff-4359-8253-3f761681c44e.rules[{"time":"2020-01-16 10:11:33","enable":true,"id":"91f62fa2-0c2d-424c-97bc-249e338f75f1","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"api监控","handle":{"continue":true,"log":false}}], context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:569: load data of plugin[monitor] success, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111ab_divide, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:190: query(): redisab_dividevalue="1", context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......ab_divideenbale, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------ab_divide_plugin keymeta, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is userdata, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:386: init_meta_of_plugin(): init local plugin[ab_divide] meta error, err:bad value type, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagab_divide keystagselector, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:566: load data of plugin[ab_divide] error, init_enable:true init_meta:false init_selectors_and_rules:true, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111kvstore, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_store.lua:190: query(): rediskvstorevalue=null, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......kvstoreenbale, context: ngx.timer
+2020/08/16 10:45:21 [info] 29150#0: *5 [lua] redis_dao.lua:559: load data of plugin[kvstore] success, context: ngx.timer
+2020/08/16 10:45:22 [notice] 29160#0: signal process started
+2020/08/16 10:45:22 [error] 29169#0: *1 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:22 [info] 29169#0: *1 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:22 [error] 29168#0: *2 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:22 [info] 29168#0: *2 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:22 [error] 29167#0: *3 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:22 [info] 29167#0: *3 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:22 [error] 29166#0: *4 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:22 [info] 29166#0: *4 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:156: init(): ddddddddddddddddddd{"serv_list":[{"ip":"127.0.0.1","port":30201},{"ip":"127.0.0.1","port":30202},{"ip":"127.0.0.1","port":30203},{"ip":"127.0.0.1","port":30204},{"ip":"127.0.0.1","port":30205},{"ip":"127.0.0.1","port":30206}],"name":"gateway-adapter"}, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111monitor, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:190: query(): redismonitorvalue="1", context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......monitorenbale, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keymeta, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is string, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagmonitor keystagselector, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:417: init_selectors_of_plugin(): &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is {"time":"2020-01-16 10:11:39","enable":true,"type":1,"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"url监控","handle":{"continue":true,"log":false},"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"]}, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:28: get_selector(): selectid=selector_c298be4e-c1ff-4359-8253-3f761681c44e{"time":"2020-01-16 10:11:39","enable":true,"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"],"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"conditions":[{"value":"\/api","operator":"match","type":"URI"}],"type":0},"name":"url监控","handle":{"continue":true,"log":false},"type":1}, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:247: getMHashInfo(): getHashByKeyTag, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:257: getMHashInfo(): %%%%%%%%%%%%%%%%%%getMHashInfomonitor_plugin:value==["{\"time\":\"2020-01-16 10:11:33\",\"enable\":true,\"id\":\"91f62fa2-0c2d-424c-97bc-249e338f75f1\",\"judge\":{\"conditions\":[{\"value\":\"\\\/api\",\"operator\":\"match\",\"type\":\"URI\"}],\"type\":0},\"name\":\"api监控\",\"handle\":{\"continue\":true,\"log\":false}}"], context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:55: get_rules_of_selector():  rules of selector, typetable len=1, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:325: init_rules_of_selector(): monitor.selector.c298be4e-c1ff-4359-8253-3f761681c44e.rules[{"time":"2020-01-16 10:11:33","enable":true,"id":"91f62fa2-0c2d-424c-97bc-249e338f75f1","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"api监控","handle":{"continue":true,"log":false}}], context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:569: load data of plugin[monitor] success, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111ab_divide, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:190: query(): redisab_dividevalue="1", context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......ab_divideenbale, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------ab_divide_plugin keymeta, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is userdata, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:386: init_meta_of_plugin(): init local plugin[ab_divide] meta error, err:bad value type, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagab_divide keystagselector, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:566: load data of plugin[ab_divide] error, init_enable:true init_meta:false init_selectors_and_rules:true, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111kvstore, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_store.lua:190: query(): rediskvstorevalue=null, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......kvstoreenbale, context: ngx.timer
+2020/08/16 10:45:23 [info] 29166#0: *5 [lua] redis_dao.lua:559: load data of plugin[kvstore] success, context: ngx.timer
+2020/08/16 10:45:24 [notice] 29174#0: signal process started
+2020/08/16 10:45:24 [error] 29181#0: *1 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:24 [error] 29180#0: *2 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:24 [info] 29180#0: *2 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:24 [info] 29181#0: *1 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:24 [error] 29179#0: *3 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:24 [info] 29179#0: *3 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:24 [error] 29182#0: *4 [lua] gateway.lua:99: init_worker(): Startup init_work: , context: init_worker_by_lua*
+2020/08/16 10:45:24 [info] 29182#0: *4 [lua] handler.lua:68: init_worker(): [AB_Divide]  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ..........................................................., context: init_worker_by_lua*
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:156: init(): ddddddddddddddddddd{"serv_list":[{"ip":"127.0.0.1","port":30201},{"ip":"127.0.0.1","port":30202},{"ip":"127.0.0.1","port":30203},{"ip":"127.0.0.1","port":30204},{"ip":"127.0.0.1","port":30205},{"ip":"127.0.0.1","port":30206}],"name":"gateway-adapter"}, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111monitor, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:190: query(): redismonitorvalue="1", context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......monitorenbale, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keymeta, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is string, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagmonitor keystagselector, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:417: init_selectors_of_plugin(): &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is {"time":"2020-01-16 10:11:39","enable":true,"type":1,"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"url监控","handle":{"continue":true,"log":false},"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"]}, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------monitor_plugin keyselector_c298be4e-c1ff-4359-8253-3f761681c44e, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:28: get_selector(): selectid=selector_c298be4e-c1ff-4359-8253-3f761681c44e{"time":"2020-01-16 10:11:39","enable":true,"rules":["91f62fa2-0c2d-424c-97bc-249e338f75f1"],"id":"c298be4e-c1ff-4359-8253-3f761681c44e","judge":{"conditions":[{"value":"\/api","operator":"match","type":"URI"}],"type":0},"name":"url监控","handle":{"continue":true,"log":false},"type":1}, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:247: getMHashInfo(): getHashByKeyTag, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:257: getMHashInfo(): %%%%%%%%%%%%%%%%%%getMHashInfomonitor_plugin:value==["{\"time\":\"2020-01-16 10:11:33\",\"enable\":true,\"id\":\"91f62fa2-0c2d-424c-97bc-249e338f75f1\",\"judge\":{\"conditions\":[{\"value\":\"\\\/api\",\"operator\":\"match\",\"type\":\"URI\"}],\"type\":0},\"name\":\"api监控\",\"handle\":{\"continue\":true,\"log\":false}}"], context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:55: get_rules_of_selector():  rules of selector, typetable len=1, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:325: init_rules_of_selector(): monitor.selector.c298be4e-c1ff-4359-8253-3f761681c44e.rules[{"time":"2020-01-16 10:11:33","enable":true,"id":"91f62fa2-0c2d-424c-97bc-249e338f75f1","judge":{"type":0,"conditions":[{"value":"\/api","operator":"match","type":"URI"}]},"name":"api监控","handle":{"continue":true,"log":false}}], context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:569: load data of plugin[monitor] success, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111ab_divide, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:190: query(): redisab_dividevalue="1", context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......ab_divideenbale, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:226: getHashInfo(): ---------------------------getHashInfo------------------------ab_divide_plugin keymeta, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:229: getHashInfo(): ---------------------------getHashInforedis------------------------, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:380: init_meta_of_plugin(): find meta: type is userdata, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:386: init_meta_of_plugin(): init local plugin[ab_divide] meta error, err:bad value type, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:270: getHashByKeyTag(): %%%%%%%%%%%%%%%%%%getHashByKeyTagab_divide keystagselector, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:409: init_selectors_of_plugin(): find selectors: type is table, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:566: load data of plugin[ab_divide] error, init_enable:true init_meta:false init_selectors_and_rules:true, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:120: getRedis(): getRedis  connection  ............................................, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:139: getRedis(): redis  connection  ok, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:184: query(): redis  11111111111111111111kvstore, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_store.lua:190: query(): rediskvstorevalue=null, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:340: init_enable_of_plugin(): ......kvstoreenbale, context: ngx.timer
+2020/08/16 10:45:25 [info] 29179#0: *5 [lua] redis_dao.lua:559: load data of plugin[kvstore] success, context: ngx.timer

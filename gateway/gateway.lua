@@ -174,6 +174,7 @@ function Gateway.rewrite()
 end
 
 
+
 function Gateway.access()
     ngx.ctx.GATEWAY_ACCESS_START = now()
 
@@ -222,5 +223,11 @@ function Gateway.log()
         plugin.handler:log()
     end
 end
+
+function Gateway.update()
+    ngx.say("更新ok..........")
+end
+
+
 
 return Gateway
