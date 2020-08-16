@@ -3,6 +3,8 @@ local string_format = string.format
 local string_find = string.find
 local string_lower = string.lower
 local ngx_re_find = ngx.re.find
+local resty_cookie=require("gateway.lib.cookie")
+local stringy = require("gateway.utils.stringy")
 
 local function assert_condition(real, operator, expected)
     if not real then
@@ -58,6 +60,12 @@ local function assert_condition(real, operator, expected)
                 return true
             end
         end
+        --匹配in
+    elseif  operator =='in' then
+        if real ~= nil and expected ~= nil then
+            return string_find(expected,real)
+        end
+
     end
 
     return false
@@ -122,10 +130,14 @@ function _M.judge(condition)
         real =  ngx.var.http_referer
     elseif condition_type == "Host" then
         real =  ngx.var.host
+   
+    --类型时cookie时
+    elseif condition_type == "Cookie" then
+        local cookies,err = cookie:get_all();
+        if cookies  then
+            real = cookies:get(condition.name)
+        end    
     end
-    -- elseif condition_type == "Cookie" then
-    --     real =  ngx.var.host
-    -- end
 
     return assert_condition(real, operator, expected)
 end

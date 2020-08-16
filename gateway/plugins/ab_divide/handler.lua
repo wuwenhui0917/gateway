@@ -23,49 +23,34 @@ local function filter_rules(sid, plugin, ngx_var, ngx_var_uri, ngx_var_host)
     if not rules or type(rules) ~= "table" or #rules <= 0 then
         return false
     end
+    local pass = false
 
     for i, rule in ipairs(rules) do
         if rule.enable == true then
             -- judge阶段
             local pass = judge_util.judge_rule(rule, plugin)
             -- 基础没匹配上时，进行业务匹配
-            if not pass then
-
+            if  pass then
+               return true
 
             end 
-
-            -- extract阶段
-            local variables = extractor_util.extract_variables(rule.extractor)
-
-            -- handle阶段
-            if pass then
-                if rule.log == true then
-                    ngx.log(ngx.INFO, "[ab_divide-Match-Rule] ", rule.name, " host:", ngx_var_host, " uri:", ngx_var_uri)
-                end
-
-                local extractor_type = rule.extractor.type
-                if rule.upstream_url then
-                    if not rule.upstream_host or rule.upstream_host=="" then -- host默认取请求的host
-                        ngx_var.upstream_host = ngx_var_host
-                    else 
-                        ngx_var.upstream_host = handle_util.build_upstream_host(extractor_type, rule.upstream_host, variables, plugin)
-                    end
-
-                    ngx_var.upstream_url = handle_util.build_upstream_url(extractor_type, rule.upstream_url, variables, plugin)
-                    ngx.log(ngx.INFO, "[Divide-Match-Rule:upstream] ", rule.name, " extractor_type:", extractor_type,
-                        " upstream_host:", ngx_var.upstream_host, " upstream_url:", ngx_var.upstream_url)
-                else
-                    ngx.log(ngx.INFO, "[Divide-Match-Rule:error] no upstream host or url. ", rule.name, " host:", ngx_var_host, " uri:", ngx_var_uri)
-                end
-
-                return true
-            else
-                if rule.log == true then
-                    ngx.log(ngx.INFO, "[Divide-NotMatch-Rule] ", rule.name, " host:", ngx_var_host, " uri:", ngx_var_uri)
-                end
-            end
         end
     end
+    -- local cookie, err = resty_cookie:new()
+    -- local just = false;
+    -- if cookie then
+    --     local cookies,err = cookie:get_all();
+    --     ngx.log(ngx.INFO, "[AB_Divide] ", "......................"..ngx_var_uri)
+    --     if cookies then
+    --         for k, v in pairs(cookies) do
+    --             if k == "tel" and v == "1" then
+    --                 return true
+    --             end    
+    --         end
+    --     end    
+        
+    -- end 
+
 
     return false
 end
@@ -88,39 +73,92 @@ end
 function DivideHandler:access(conf)
     DivideHandler.super.access(self)
     -- ngx.log(ngx.log,"")
-    
+
+    local enable = gateway_db.get("ab_divide.enable")
+    local meta = gateway_db.get_json("ab_divide.meta")
+    local selectors = gateway_db.get_json("ab_divide.selectors")
+    local ordered_selectors = meta and meta.selectors
+    --未配置任何规则时，不进行灰度处理d
+    if not enable or enable ~= true or not meta or not ordered_selectors or not selectors then
+        ngx.log(ngx.INFO,"未配置规则，不进行灰度处理")
+        return
+    end
+
     local ngx_var = ngx.var
     local ngx_var_uri = ngx_var.uri
     local ngx_var_host = ngx_var.host
-    local cookie, err = resty_cookie:new()
-    local just = false;
-    if cookie then
-
-        local cookies,err = cookie:get_all();
-        ngx.log(ngx.INFO, "[AB_Divide] ", "......................"..ngx_var_uri)
-        if cookies then
-            for k, v in pairs(cookies) do
-                if k == "tel" and v == "1" then
-                    just=true;
-                    break
-                end    
+    --进行渠道匹配
+    for i, sid in ipairs(ordered_selectors) do
+        ngx.log(ngx.INFO, "==[ab_divide][PASS THROUGH SELECTOR:", sid, "]")
+        local selector = selectors[sid]
+        if selector and selector.enable == true then
+            local selector_pass 
+            if selector.type == 0 then -- 全流量选择器
+                selector_pass = true
+            else
+                selector_pass = judge_util.judge_selector(selector, "ab_divide")-- selector judge
             end
-        end    
-        
-    end 
-    
-    if just then
-        -- ngx.log(ngx.INFO, "[AB_Divide] 转发到灰度 ")
-        local a_divide = gateway_db.get("a_divide")
-        ngx.log(ngx.INFO, "[AB_Divide] 转发到灰度 "..a_divide)
+            --渠道匹配成功时，进行规则匹配
+            if selector_pass then
+                if selector.handle and selector.handle.log == true then
+                    ngx.log(ngx.INFO, "[ab_divide][PASS-SELECTOR:", sid, "] ", ngx_var_uri)
+                end
+            
+                local match = filter_rules(sid, "ab_divide", ngx_var, ngx_var_uri, ngx_var_host)
+                --规则匹配成功，进行灰度转发
+                if match then -- 进行灰度出路
+                    if just then
+                        -- ngx.log(ngx.INFO, "[AB_Divide] 转发到灰度 ")
+                        local a_divide = gateway_db.get("a_divide")
+                        ngx.log(ngx.INFO, "[AB_Divide] 转发到灰度 "..a_divide)
+                
+                        ngx_var.upstream_url='http://a_upstream'
+                        ngx_var.upstream_host = ngx_var_host
+                    else 
+                        local b_divide = gateway_db.get("b_divide");
+                        ngx.log(ngx.INFO, "[AB_Divide] 转发到正式 "..b_divide)
+                
+                    end
+                end
+            else
+                if selector.handle and selector.handle.log == true then
+                    ngx.log(ngx.INFO, "[ab_divide][NOT-PASS-SELECTOR:", sid, "] ", ngx_var_uri)
+                end
+            end
 
-        ngx_var.upstream_url='http://a_upstream'
-        ngx_var.upstream_host = ngx_var_host
-    else 
-        local b_divide = gateway_db.get("b_divide");
-        ngx.log(ngx.INFO, "[AB_Divide] 转发到正式 "..b_divide)
-
+            -- if continue or break the loop
+            if selector.handle and selector.handle.continue == true then
+                -- continue next selector
+            else
+                break
+            end
+        end
     end
+    
+
+
+    
+    -- local ngx_var = ngx.var
+    -- local ngx_var_uri = ngx_var.uri
+    -- local ngx_var_host = ngx_var.host
+    -- local cookie, err = resty_cookie:new()
+    -- local just = false;
+    -- if cookie then
+
+    --     local cookies,err = cookie:get_all();
+    --     ngx.log(ngx.INFO, "[AB_Divide] ", "......................"..ngx_var_uri)
+    --     if cookies then
+    --         for k, v in pairs(cookies) do
+    --             if k == "tel" and v == "1" then
+    --                 just=true;
+    --                 break
+    --             end    
+    --         end
+    --     end    
+        
+    -- end 
+    
+   
     -- local enable = gateway_db.get("ab_divide.enable")
     -- local meta = gateway_db.get_json("ab_divide.meta")
     -- local selectors = gateway_db.get_json("ab_divide.selectors")
