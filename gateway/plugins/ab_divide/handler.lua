@@ -22,7 +22,8 @@ end
 
 local function filter_rules(sid, plugin, ngx_var, ngx_var_uri, ngx_var_host)
     local rules = gateway_db.get_json(plugin .. ".selector." .. sid .. ".rules")
-    ngx.log(ngx.INFO, "[AB_Divide] rule============",type(rules) )
+    ngx.log(ngx.INFO, "[AB_Divide] rule============",json.encode(rules) )
+
     if not rules or type(rules) ~= "table" or #rules <= 0 then
         return false
     end

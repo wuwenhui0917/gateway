@@ -62,6 +62,8 @@ local function assert_condition(real, operator, expected)
         end
         --匹配in
     elseif  operator =='in' then
+        ngx.log(ngx.INFO, "execute  in  ", operator,real,expected)
+
         if real ~= nil and expected ~= nil then
             return string_find(expected,real)
         end
@@ -79,6 +81,8 @@ function _M.judge(condition)
     if not condition_type then
         return false
     end
+    ngx.log(ngx.INFO, " condition_type==================================", condition_type)
+
 
     local operator = condition.operator
     local expected = condition.value
@@ -133,9 +137,14 @@ function _M.judge(condition)
    
     --类型时cookie时
     elseif condition_type == "Cookie" then
-        local cookies,err = cookie:get_all();
+        ngx.log(ngx.INFO, " Cookie==================================", condition.name)
+        local cookies = resty_cookie:new()
+        -- local cookies,err = cookieUtil:get_all()
         if cookies  then
+            ngx.log(ngx.INFO, " cookiename==================================", condition.name)
             real = cookies:get(condition.name)
+            ngx.log(ngx.INFO, " real=========================================", real)
+            
         end    
     end
 
