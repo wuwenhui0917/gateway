@@ -49,6 +49,7 @@ function _M:build_app()
 
     -- basic-auth middleware
     app:use(function(req, res, next)
+        
         if not auth_enable then return next() end
         if illegal_credentials  then return auth_failed(res) end
 

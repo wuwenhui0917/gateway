@@ -228,6 +228,11 @@ function Gateway.update()
     ngx.say("更新ok..........")
 end
 
+function Gateway.getConfig()
+    
+    ngx.say("更新ok..........")
+end
+
 
 
 return Gateway

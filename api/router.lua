@@ -5,10 +5,11 @@ local require = require
 local xpcall = xpcall
 local string_lower = string.lower
 local lor = require("lor.index")
+local json = require("gateway.utils.json")
 
 
 local function load_plugin_api(plugin, api_router, store)
-    local plugin_api_path = "orange.plugins." .. plugin .. ".api"
+    local plugin_api_path = "gateway.plugins." .. plugin .. ".api"
     ngx.log(ngx.ERR, "[plugin's api load], plugin_api_path:", plugin_api_path)
 
     local ok, plugin_api, e
@@ -44,8 +45,8 @@ end
 
 return function(config, store)
     local api_router = lor:Router()
-    local stat_api = require("orange.plugins.stat.api")
-    local orange_db = require("orange.store.orange_db")
+    local stat_api = require("gateway.plugins.stat.api")
+    local gateway_db = require("gateway.store.gateway_db")
 
     --- 插件信息
     -- 当前加载的插件，开启与关闭情况, 每个插件的规则条数等
@@ -54,22 +55,26 @@ return function(config, store)
 
         local plugins = {}
         for i, v in ipairs(available_plugins) do
+
             local tmp
             if v ~= "kvstore" then
                 tmp = {
-                    enable =  orange_db.get(v .. ".enable"),
+                    enable =  gateway_db.get(v .. ".enable"),
                     name = v,
                     active_selector_count = 0,
                     inactive_selector_count = 0,
                     active_rule_count = 0,
                     inactive_rule_count = 0
                 }
-                local plugin_selectors = orange_db.get_json(v .. ".selectors")
+                local plugin_selectors = gateway_db.get_json(v .. ".selectors")
+                ngx.log(ngx.ERR, "plugin................."..v)
                 if plugin_selectors then
                     for sid, s in pairs(plugin_selectors) do
+                        ngx.log(ngx.ERR, "plugin................."..v..json.encode(s))
+                        
                         if s.enable == true then
                             tmp.active_selector_count = tmp.active_selector_count + 1
-                            local selector_rules = orange_db.get_json(v .. ".selector." .. sid .. ".rules")
+                            local selector_rules = gateway_db.get_json(v .. ".selector." .. sid .. ".rules")
                             for _, r in ipairs(selector_rules) do
                                 if r.enable == true then
                                     tmp.active_rule_count = tmp.active_rule_count + 1
@@ -84,7 +89,7 @@ return function(config, store)
                 end
             else
                 tmp = {
-                    enable =  (v=="stat") and true or (orange_db.get(v .. ".enable") or false),
+                    enable =  (v=="stat") and true or (gateway_db.get(v .. ".enable") or false),
                     name = v
                 }
             end

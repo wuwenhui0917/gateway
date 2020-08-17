@@ -226,25 +226,24 @@ function RedisStore:getHashInfo(plugin,key)
     ngx.log(ngx.INFO,"---------------------------getHashInfo------------------------"..hashtalename.." key"..key);
     local red=self.redis
     if  red  then
-        ngx.log(ngx.INFO,"---------------------------getHashInforedis------------------------");
-
         local ok,err= red:hget(hashtalename,key)
         if ok then
            -- ngx.log(ngx.INFO,"---------------------------getHashInfo------------------------"..json.decode(ok));
-            -- return json.decode(ok)
-            return ok
+            --return json.decode(ok)
+            ngx.log(ngx.INFO, "find meta: type is "..type(ok) )
+
+            return json.decode(ok)
+            -- return ok
         end
     else 
-        ngx.log(ngx.INFO,"---------------------------redis------------------------ error");
+        ngx.log(ngx.ERR,"---------------------------redis------------------------ error");
    
     end 
-    ngx.log(ngx.INFO,"---------------------------getHashInfo------------------------ error"..hashtalename.." key"..key);
-
     return nil   
 end
 
 function RedisStore:getMHashInfo(plugin,keys)
-    ngx.log(ngx.INFO,"getHashByKeyTag");
+    ngx.log(ngx.INFO,"getHashByKeyTag".. type(keys));
    
 
     if not plugin or plugin == "" then return nil end
@@ -255,7 +254,7 @@ function RedisStore:getMHashInfo(plugin,keys)
         local ok,error= red:hmget(hashtalename,keys)
         if ok then
            ngx.log(ngx.INFO,"%%%%%%%%%%%%%%%%%%getMHashInfo"..hashtalename..":value=="..json.encode(ok));
-          return ok
+           return ok;
         else 
             ngx.log(ngx.ERR,"%%%%%%%%%%%%%%%%%%getMHashInfo"..hashtalename..":value==",error);
    
@@ -281,7 +280,7 @@ function RedisStore:getHashByKeyTag(plugin,keystag)
                 -- table_insert(param,RedisStore:getHashInfo(plugin,s));
                 local info = self:getHashInfo(plugin,s);
                 if info then
-                    table_insert(param,json.decode(info));
+                    table_insert(param,info);
                 end
             end    
             

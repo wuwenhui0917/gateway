@@ -25,7 +25,7 @@ function _M.get_selector(plugin, store, selector_id)
 
 
     if not err and selector  then
-        ngx.log(ngx.INFO, "selectid="..selectid..selector)
+        -- ngx.log(ngx.INFO, "selectid="..selectid..selector)
         return selector
     end
 
@@ -46,13 +46,14 @@ function _M.get_rules_of_selector(plugin, store, rule_ids)
     if not to_get_rules_ids or to_get_rules_ids == "" then
         return {}
     end
+    ngx.log(ngx.ERR, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa to get rules of selector type"..type(plugin)..to_get_rules_ids.."|")
     local rules,err = store:getMHashInfo(plugin,to_get_rules_ids);
     
     if err then
-        ngx.log(ngx.INFO, "error to get rules of selector, err:", err)
+        ngx.log(ngx.ERR, "error to get rules of selector")
         return {}
     end
-    ngx.log(ngx.INFO, " rules of selector, type"..type(rules).." len="..#rules)
+    ngx.log(ngx.ERR, " rules of selectorsssssssssssssssssssssssssssssssssssssssssssss, type"..type(rules))
     if rules and type(rules) == "table" and #rules > 0 then
         local format_rules = {}
 
@@ -319,7 +320,7 @@ function _M.init_rules_of_selector(plugin, store, selector_id)
         return false
     end
 
-    selector = json.decode(selector)
+    -- selector = json.decode(selector)
     local rules_ids = selector.rules or {}
     local rules = _M.get_rules_of_selector(plugin, store, rules_ids)
     ngx.log(ngx.INFO, plugin .. ".selector." .. selector_id .. ".rules"..json.encode(rules))
@@ -337,16 +338,14 @@ end
 function _M.init_enable_of_plugin(plugin, store)
     -- 查找enable
     local enables, err = store:query(plugin)
-    ngx.log(ngx.INFO, '......'..plugin.."enbale")
-
-
+    -- ngx.log(ngx.INFO, '......'..plugin.."enbale")
     if err then
         ngx.log(ngx.INFO, "Load `enable` of plugin[" .. plugin .. "], error: ", err)
         return false
     end
 
-    if enable then
-
+    if enables then
+        ngx.log(ngx.INFO, "setttttttttttttttttttttttttttttt plugin[" .. plugin .. "], true")
         gateway_db.set(plugin .. ".enable", true)
     else
         gateway_db.set(plugin .. ".enable", false)   
@@ -371,17 +370,18 @@ function _M.init_meta_of_plugin(plugin, store)
     --     key = plugin 
     -- })
 
+    ngx.log(ngx.ERR, "find meta: type is "..type(plugin) )
     local meta, err = store:getHashInfo(plugin,"meta")
    
     if err then
         ngx.log(ngx.INFO, "error to find meta from storage when initializing plugin[" .. plugin .. "] local meta, err:", err)
         return false
     end
-    ngx.log(ngx.INFO, "find meta: type is "..type(meta) )
+    ngx.log(ngx.INFO, "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmfind meta: type is "..type(meta) )
 
 
     if meta  then
-        local success, err, forcible = gateway_db.set(plugin .. ".meta", meta or '{}')
+        local success, err, forcible = gateway_db.set_json(plugin .. ".meta", meta or {})
         if err or not success then
             ngx.log(ngx.INFO, "init local plugin[" .. plugin .. "] meta error, err:", err)
             return false
@@ -406,22 +406,25 @@ function _M.init_selectors_of_plugin(plugin, store)
         return false
     end
 
-    ngx.log(ngx.INFO, "find selectors: type is "..type(selectors) )
+    ngx.log(ngx.INFO, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSfind selectors: type is "..type(selectors) )
 
 
 
     local to_update_selectors = {}
     if selectors and type(selectors) == "table" then
         for _, s in ipairs(selectors) do
-            to_update_selectors[s.id] = json.decode(s)
-            ngx.log(ngx.INFO, "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& selectors: type is "..json.encode(s) )
-
+            -- local s = json.decode(s1);
+            -- local id = s.id
+            -- ngx.log(ngx.INFO, "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"..s )
+            -- local s_id = s.id
+            to_update_selectors[s.id] = s;
             -- init this selector's rules local cache
             local init_rules_of_it = _M.init_rules_of_selector(plugin, store, s.id)
             if not init_rules_of_it then
                 return false
             end
         end
+        ngx.log(ngx.INFO, "selllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll " )
 
         local success, err, forcible = gateway_db.set_json(plugin .. ".selectors", to_update_selectors)
         if err or not success then
