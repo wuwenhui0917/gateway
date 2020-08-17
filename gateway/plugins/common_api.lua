@@ -7,6 +7,8 @@ local gateway_db = require("gateway.store.gateway_db")
 local utils = require("gateway.utils.utils")
 local stringy = require("gateway.utils.stringy")
 local aes = require("resty.aes")
+local dao = require("gateway.store.dao")
+local redisdao = require("gateway.store.redis_dao")
 
 -- build common apis
 return function(plugin)
@@ -84,19 +86,58 @@ return function(plugin)
         end
     }
 
-  
+    API["/" .. plugin .. "/reload"] = {
+        GET = function(store)
+            return function(req, res, next)
+                local gateway = context.gateway
+                local config = gateway.data.config
+                local store = gateway.data.store
+                local result = false
+                local objplugin  = json.decode(plugin);
+                if  config.store == "mysql" then
+                    result = dao.load_data_by_mysql(store, objplugin)
+                -- elseif config.store == "redis" 
+                --     result = redisdao.load_data_by_redis(store, plugin)
+                end
+                if  config.store == "redis" then
+                    result = redisdao.load_data_by_redis(store, objplugin)
+                
+                end
 
-    
+                
+                return res:json({
+                    success = result,
+                    msg = "succeed to get configuration in this node"
+                    
+                })
+            end
+        end
+    }
 
-   
+    -- API["/" .. plugin .. "/reload"] = {
+    --     GET = function(store)
+    --         return function(req, res, next)
+    --             local gateway = context.gateway
+    --             local config = gateway.data.config
+    --             local store = gateway.data.store
+    --             local available_plugins = config.plugins
+    --             local result 
+    --             if  config.store == "mysql" then
+    --                 result = dao.load_data_by_mysql(store, v)
+    --             elseif config.store == "redis" 
+    --                 result = redisdao.load_data_by_redis(store, plugin)
+    --             end
 
-
-   
-
-
-
-
-   
-
+    --             return res:json({
+    --                 success = result,
+    --                 msg = "succeed to get configuration in this node",
+    --                 data = {
+    --                     enable = enable,
+    --                     selectors = selectors
+    --                 }
+    --             })
+    --         end
+    --     end
+    -- }
     return API
 end
