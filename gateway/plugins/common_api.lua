@@ -9,34 +9,55 @@ local stringy = require("gateway.utils.stringy")
 local aes = require("resty.aes")
 local dao = require("gateway.store.dao")
 local redisdao = require("gateway.store.redis_dao")
+local stream_sock = ngx.socket.tcp
+local log = ngx.log
+local ERR = ngx.ERR
+local WARN = ngx.WARN
+local DEBUG = ngx.DEBUG
+local sub = string.sub
+local re_find = ngx.re.find
+local new_timer = ngx.timer.at
+local shared = ngx.shared
+local debug_mode = ngx.config.debug
+local concat = table.concat
+local tonumber = tonumber
+local tostring = tostring
+local ipairs = ipairs
+local ceil = math.ceil
+local spawn = ngx.thread.spawn
+local wait = ngx.thread.wait
+local pcall = pcall
+local ok, upstream = pcall(require, "ngx.upstream")
+if not ok then
+    error("ngx_upstream_lua module required")
+end
+
+local set_peer_down = upstream.set_peer_down
+local get_primary_peers = upstream.get_primary_peers
+local get_backup_peers = upstream.get_backup_peers
+local get_upstreams = upstream.get_upstreams
+
+local upstream_checker_statuses = {}
+
+-- local function gen_peers_status_info(peers, bits, idx)
+--     local npeers = #peers
+--     for i = 1, npeers do
+--         local peer = peers[i]
+--         bits[idx] = "        "
+--         bits[idx + 1] = peer.name
+--         if peer.down then
+--             bits[idx + 2] = " DOWN\n"
+--         else
+--             bits[idx + 2] = " up\n"
+--         end
+--         idx = idx + 3
+--     end
+--     return idx
+-- end
 
 -- build common apis
 return function(plugin)
     local API = {}
-
-   
-
-    -- fetch config from store
-    -- API["/" .. plugin .. "/fetch_config"] = {
-    --     GET = function(store)
-    --         return function(req, res, next)
-    --             local success, data =  dao.compose_plugin_data(store, plugin)
-    --             if success then
-    --                 return res:json({
-    --                     success = true,
-    --                     msg = "succeed to fetch config from store",
-    --                     data = data
-    --                 })
-    --             else
-    --                 ngx.log(ngx.ERR, "error to fetch plugin[" .. plugin .. "] config from store")
-    --                 return res:json({
-    --                     success = false,
-    --                     msg = "error to fetch config from store"
-    --                 })
-    --             end
-    --         end
-    --     end
-    -- }
 
     -- get config in gateway's node now
     API["/" .. plugin .. "/config"] = {
@@ -139,5 +160,57 @@ return function(plugin)
     --         end
     --     end
     -- }
+    API["/upstream"] = {
+        GET = function(store)
+            return function(req, res, next)
+                local result = false
+                local nodes={}
+               
+                local us=false
+                local us, err = get_upstreams()
+                ngx.log(ngx.INFO, "shibai " )
+              
+                if not us then
+                    result = false
+
+                else 
+                    local n = #us
+                    for i = 1, n do
+                        
+                        local u = us[i]
+                        local upsream={}
+                        local peers, err = get_primary_peers(u)
+                        if not peers then
+                            result = false
+                            break
+                        end
+                        upsream.name=u
+                        upsream.nodes=peers
+                        nodes[u]=upsream
+
+
+                    end
+
+                end
+                
+                
+                return res:json({
+                    success = result,
+                    data = nodes
+                    
+                })
+            end
+        end
+    }
+
+
+    
+
+
+
+
+
+
+
     return API
 end

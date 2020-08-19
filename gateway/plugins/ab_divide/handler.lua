@@ -42,23 +42,7 @@ local function filter_rules(sid, plugin, ngx_var, ngx_var_uri, ngx_var_host)
             end 
         end
     end
-    -- local cookie, err = resty_cookie:new()
-    -- local just = false;
-    -- if cookie then
-    --     local cookies,err = cookie:get_all();
-    --     ngx.log(ngx.INFO, "[AB_Divide] ", "......................"..ngx_var_uri)
-    --     if cookies then
-    --         for k, v in pairs(cookies) do
-    --             if k == "tel" and v == "1" then
-    --                 return true
-    --             end    
-    --         end
-    --     end    
-        
-    -- end 
-
-
-    return false
+       return false
 end
 
 

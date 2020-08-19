@@ -8,6 +8,7 @@ local utils = require("gateway.utils.utils")
 local config_loader = require("gateway.utils.config_loader")
 local dao = require("gateway.store.dao")
 local redisdao = require("gateway.store.redis_dao")
+local hc = require "resty.upstream.healthcheck"
 
 local HEADERS = {
     PROXY_LATENCY = "X-Orange-Proxy-Latency",
@@ -141,11 +142,12 @@ function Gateway.init_worker()
 
     end   
 
-
-
     for _, plugin in ipairs(loaded_plugins) do
         plugin.handler:init_worker()
     end
+    -- 添加探测脚本
+    
+
 end
 
 
@@ -228,9 +230,22 @@ function Gateway.update()
     ngx.say("更新ok..........")
 end
 
-function Gateway.getConfig()
-    
-    ngx.say("更新ok..........")
+function Gateway.checkupstream(upstreams)
+    -- # config a_upstream check
+  
+    local ok, err = hc.spawn_checker {
+    shm = "healthcheck",
+    upstream = upstreams,
+    type = "http",
+    http_req = "GET /health HTTP/1.0\r\nHost: "..upstreams.."\r\n\r\n",
+    interval = 2000,
+    timeout = 5000,
+    fall = 3,
+    rise = 2,
+    valid_statuses = {200, 302},
+    concurrency = 1,
+    }
+
 end
 
 
