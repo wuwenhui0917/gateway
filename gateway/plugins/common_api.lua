@@ -184,8 +184,15 @@ return function(plugin)
                             result = false
                             break
                         end
+                       
+                        local bakpeers, err = get_backup_peers(u)
+                        if not bakpeers then
+                            result = false
+                            break
+                        end
                         upsream.name=u
-                        upsream.nodes=peers
+                        upsream.primarynodes=peers
+                        upsream.backuppeers=bakpeers
                         nodes[u]=upsream
 
 
