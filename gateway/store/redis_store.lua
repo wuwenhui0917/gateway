@@ -26,17 +26,17 @@ config = {
     
 }
 
-config2 = {
-    name = "test",
-    serv_list = {
-        {ip="127.0.0.1", port = 30201},
-        {ip="127.0.0.1", port = 30202},
-        {ip="127.0.0.1", port = 30203},
-        {ip="127.0.0.1", port = 30204},
-        {ip="127.0.0.1", port = 30205},
-        {ip="127.0.0.1", port = 30206},
-    },
-}
+-- config2 = {
+--     name = "test",
+--     serv_list = {
+--         {ip="127.0.0.1", port = 30201},
+--         {ip="127.0.0.1", port = 30202},
+--         {ip="127.0.0.1", port = 30203},
+--         {ip="127.0.0.1", port = 30204},
+--         {ip="127.0.0.1", port = 30205},
+--         {ip="127.0.0.1", port = 30206},
+--     },
+-- }
 function RedisStore:new(options)
 
     local serv_list = {
@@ -67,7 +67,8 @@ function RedisStore:new(options)
     self.redisconfig.name="gateway-redis";
     self.redisconfig.serv_list = serv_list;
     -- self.redisconfig=config2;
-    -- self.redisconfige = config;
+    self.redisconfige = config;
+    self.cluster = true
     ngx.log(ngx.INFO,"configinfffffffffffffffffffffffffffffffffffffffffffffffffffffffff"..json.encode(self.redisconfig));
 
     
@@ -146,9 +147,6 @@ function RedisStore:getRedis()
 
     end 
 
-    
-
-
 end    
 
 function RedisStore:init()
@@ -158,10 +156,6 @@ function RedisStore:init()
         -- local redis1 = redis_cluster:new(config);
         -- ngx.log(ngx.INFO,"redis..........."..json.encode(redis1.config));
         -- redis1.set("123","1222");
-         
-  
-
-
 end    
 
 function RedisStore:query(opts)
