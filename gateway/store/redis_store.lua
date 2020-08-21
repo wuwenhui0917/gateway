@@ -14,6 +14,7 @@ local json = require("gateway.utils.json")
 
 config = {
     name = "gateway-adapter",
+    cluster=true,
     serv_list = {
         
        {ip="127.0.0.1", port = 30201},
@@ -67,9 +68,11 @@ function RedisStore:new(options)
     self.redisconfig.name="gateway-redis";
     self.redisconfig.serv_list = serv_list;
     -- self.redisconfig=config2;
+   
+    config.serv_list = serv_list;
     self.redisconfige = config;
-    self.cluster = true
-    ngx.log(ngx.INFO,"configinfffffffffffffffffffffffffffffffffffffffffffffffffffffffff"..json.encode(self.redisconfig));
+   
+    ngx.log(ngx.INFO,"configinfffffffffffffffffffffffffffffffffffffffffffffffffffffffff"..json.encode(config));
 
     
 
@@ -117,18 +120,21 @@ end
 
 
 function RedisStore:getRedis()
+    
+    
+    if config.cluster then
+        ngx.log(ngx.INFO,"getRedis  connection  type is cluster ............................................");
 
-    ngx.log(ngx.INFO,"getRedis  connection  ............................................");
 
-    if self.cluster then
-
-        local redcluster,error = redis_cluster:new(self.redisconfig);
+        local redcluster,error = redis_cluster:new(config);
         if redcluster  then
             return redcluster
         else
             return nil
         end        
     else 
+
+        ngx.log(ngx.INFO,"getRedis  connection  type is single ............................................");
        
         local red = redis:new()  --创建一个对象，注意是用冒号调用的
         --设置超时（毫秒）  
@@ -137,7 +143,6 @@ function RedisStore:getRedis()
         local ip = "127.0.0.1"  
         local port = 10201
         local ok, err = red:connect(ip, port)
-        ngx.log(ngx.INFO,"redis  connection  ok");
         if red  then
             return red
         else
@@ -147,15 +152,19 @@ function RedisStore:getRedis()
 
     end 
 
+end
+
+function RedisStore:close()
+  if self.redis then
+    self.redis.close()
+  end  
+
 end    
 
 function RedisStore:init()
    
-        ngx.log(ngx.INFO,'ddddddddddddddddddd'..json.encode(config));
         self.redis = RedisStore:getRedis();
-        -- local redis1 = redis_cluster:new(config);
-        -- ngx.log(ngx.INFO,"redis..........."..json.encode(redis1.config));
-        -- redis1.set("123","1222");
+       
 end    
 
 function RedisStore:query(opts)
@@ -170,14 +179,7 @@ function RedisStore:query(opts)
         key = opts.key
     end
 
-    -- ngx.log(ngx.INFO,"redis  11111111111111111111"..key);
-    -- -- RedisStore:int();
-    -- ngx.log(ngx.INFO,'ddddddddddddddddddd'..json.encode(config));
-    -- local redis=redis_cluster:new(config);
-    local red = RedisStore:getRedis();
-    ngx.log(ngx.INFO,"redis  11111111111111111111"..key);
-    -- ngx.log(ngx.INFO,"redis  value===="..json.encode(red.get(key)));
-    
+    local red =self.redis    
     if  red  then
         local ok,error = red:get(key)
         if ok then
@@ -186,14 +188,6 @@ function RedisStore:query(opts)
         end    
  
     end    
-   
-    -- if redis  then
-        
-    --     -- ngx.log(ngx.INFO,"redis  get..........."..redis.get(key));
-
-    
-    --       redis.set(key,"1");
-    -- end   
     
     return 0;
 

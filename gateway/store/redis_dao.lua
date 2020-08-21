@@ -46,14 +46,12 @@ function _M.get_rules_of_selector(plugin, store, rule_ids)
     if not to_get_rules_ids or to_get_rules_ids == "" then
         return {}
     end
-    ngx.log(ngx.ERR, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa to get rules of selector type"..type(plugin)..to_get_rules_ids.."|")
     local rules,err = store:getMHashInfo(plugin,to_get_rules_ids);
     
     if err then
         ngx.log(ngx.ERR, "error to get rules of selector")
         return {}
     end
-    ngx.log(ngx.ERR, " rules of selectorsssssssssssssssssssssssssssssssssssssssssssss, type"..type(rules))
     if rules and type(rules) == "table" and #rules > 0 then
         local format_rules = {}
 
@@ -345,7 +343,6 @@ function _M.init_enable_of_plugin(plugin, store)
     end
 
     if enables then
-        ngx.log(ngx.INFO, "setttttttttttttttttttttttttttttt plugin[" .. plugin .. "], true")
         gateway_db.set(plugin .. ".enable", true)
     else
         gateway_db.set(plugin .. ".enable", false)   
@@ -377,7 +374,6 @@ function _M.init_meta_of_plugin(plugin, store)
         ngx.log(ngx.INFO, "error to find meta from storage when initializing plugin[" .. plugin .. "] local meta, err:", err)
         return false
     end
-    ngx.log(ngx.INFO, "mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmfind meta: type is "..type(meta) )
 
 
     if meta  then
@@ -406,7 +402,6 @@ function _M.init_selectors_of_plugin(plugin, store)
         return false
     end
 
-    ngx.log(ngx.INFO, "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSfind selectors: type is "..type(selectors) )
 
 
 
@@ -424,7 +419,6 @@ function _M.init_selectors_of_plugin(plugin, store)
                 return false
             end
         end
-        ngx.log(ngx.INFO, "selllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll " )
 
         local success, err, forcible = gateway_db.set_json(plugin .. ".selectors", to_update_selectors)
         if err or not success then
