@@ -48,6 +48,10 @@ function RedisStore:new(options)
     RedisStore.super.new(self, self._name)
     self.store_type = "redis"
     local serverlist = options.serv_list
+    local cluster = options.cluster
+    if not cluster then
+        config.cluster = false
+    end
     ngx.log(ngx.INFO,"serverlist"..serverlist);
     if serv_list then
         for _dex,server in ipairs(stringy.split(serverlist,",")) do

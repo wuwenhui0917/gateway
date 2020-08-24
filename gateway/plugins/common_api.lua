@@ -115,20 +115,22 @@ return function(plugin)
                 local store = gateway.data.store
                 local result = false
                 local objplugin  = json.decode(plugin);
+
                 if  config.store == "mysql" then
-                    result = dao.load_data_by_mysql(store, objplugin)
+                    result = dao.load_data_by_mysql(store, plugin)
                 -- elseif config.store == "redis" 
                 --     result = redisdao.load_data_by_redis(store, plugin)
                 end
                 if  config.store == "redis" then
-                    result = redisdao.load_data_by_redis(store, objplugin)
+                    result = redisdao.load_data_by_redis(store, plugin)
                 
                 end
 
                 
                 return res:json({
                     success = result,
-                    msg = "succeed to get configuration in this node"
+                    msg = "succeed to get configuration in this node",
+                    plugin=plugin
                     
                 })
             end
