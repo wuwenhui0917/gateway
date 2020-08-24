@@ -390,10 +390,6 @@ function _M.init_meta_of_plugin(plugin, store)
 end
 
 function _M.init_selectors_of_plugin(plugin, store)
-    -- local selectors, err = store:query({
-    --     sql = "select * from " .. plugin .. " where `type` = ?",
-    --     params = {"selector"}
-    -- })
     --获取选择器
     local selectors, err = store:getHashByKeyTag(plugin,"selector");
 
@@ -401,10 +397,6 @@ function _M.init_selectors_of_plugin(plugin, store)
         ngx.log(ngx.INFO, "error to find selectors from storage when initializing plugin[" .. plugin .. "], err:", err)
         return false
     end
-
-
-
-
     local to_update_selectors = {}
     if selectors and type(selectors) == "table" then
         for _, s in ipairs(selectors) do
@@ -444,28 +436,7 @@ function _M.compose_plugin_data(store, plugin)
     local data = {}
     local ok, e
     ok = xpcall(function()
-        -- get enable
-        -- local enables, err = store:query({
-        --     sql = "select `key`, `value` from meta where `key`=?",
-        --     params = {plugin .. ".enable"}
-        -- })
-
-        -- if err then
-        --     ngx.log(ngx.INFO, "Load `enable` of plugin[" .. plugin .. "], error: ", err)
-        --     return false
-        -- end
-
-        -- if enables and type(enables) == "table" and #enables > 0 then
-        --     data[plugin .. ".enable"] = (enables[1].value == "1")
-        -- else
-        --     data[plugin .. ".enable"] = false
-        -- end
-
-        -- get meta
-        -- local meta, err = store:query({
-        --     sql = "select * from " .. plugin .. " where `type` = ? limit 1",
-        --     params = {"meta"}
-        -- })
+       
         local meta, err = store:getHashInfo(plugin,"meta");
 
         if err then
@@ -479,12 +450,6 @@ function _M.compose_plugin_data(store, plugin)
             ngx.log(ngx.INFO, "can not find meta from storage when fetching data of plugin[" .. plugin .. "]")
             return false
         end
-
-        -- get selectors and its rules
-        -- local selectors, err = store:query({
-        --     sql = "select * from " .. plugin .. " where `type` = ?",
-        --     params = {"selector"}
-        -- })
         local selectors, err = store:getHashByKeyTag(plugin,"selector");
 
         if err then
