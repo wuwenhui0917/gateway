@@ -58,6 +58,7 @@ function DivideHandler:init_worker()
     ngx.log(ngx.INFO, "[AB_Divide] ", " @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@init ...........................................................")
     gateway_db.set("a_divide","http://a_upstream");
     gateway_db.set("b_divide","http://default_upstream");
+
 end     
 
 function DivideHandler:access(conf)
@@ -107,8 +108,16 @@ function DivideHandler:access(conf)
                     -- ngx.log(ngx.INFO, "[AB_Divide] 转发到灰度 ")
                     local a_divide = gateway_db.get("a_divide")
                     ngx.log(ngx.INFO, "[AB_Divide] 转发到灰度 "..a_divide)
-                    ngx_var.upstream_url='http://a_upstream'
+                    -- ngx_var.upstream_url='http://a_upstream'
+                    local grayurl = ngx_var.upstream_gray
+                    if grayurl  then
+
+                        ngx_var.upstream_url=ngx_var.upstream_gray
+                    else
+                        ngx_var.upstream_url=a_divide    
+                    end  
                     ngx_var.upstream_host = ngx_var_host
+  
                    
                 else 
                     local b_divide = gateway_db.get("b_divide");
