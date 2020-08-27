@@ -15,11 +15,13 @@ local function filter_rules(sid, plugin, ngx_var_uri)
         if rule.enable == true then
             -- judge阶段
             local pass = judge_util.judge_rule(rule, plugin)
-
+            ngx.log(ngx.ERR, "plugin&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&", pass, "]")
             -- handle阶段
             if pass then
                 local key_suffix =  rule.id
                 stat.count(key_suffix)
+                ngx.log(ngx.ERR, "monior&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&", key_suffix, "]")
+
 
                 local handle = rule.handle
                 if handle then
@@ -50,6 +52,8 @@ end
 
 function URLMonitorHandler:log(conf)
     URLMonitorHandler.super.log(self)
+    ngx.log(ngx.ERR, "plugin&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&", pass, "]")
+
 
     local enable = gateway_db.get("monitor.enable")
     local meta = gateway_db.get_json("monitor.meta")
