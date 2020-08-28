@@ -1,5 +1,6 @@
 -- redis store: will store plgin info into redis.
 -- author:wuwh(wuwh6@asiainfo.com)
+--可能存在并发问题，由于无并发需要
 local type = type
 local Store = require("gateway.store.base")
 -- local redis = require "resty.redis"
@@ -128,8 +129,6 @@ function RedisStore:getRedis()
     
     if config.cluster then
         ngx.log(ngx.INFO,"getRedis  connection  type is cluster ............................................");
-
-
         local redcluster,error = redis_cluster:new(config);
         if redcluster  then
             return redcluster
@@ -166,8 +165,8 @@ function RedisStore:close()
 end    
 
 function RedisStore:init()
-   
-        self.redis = RedisStore:getRedis();
+    RedisStore:close();
+    self.redis = RedisStore:getRedis();
        
 end    
 

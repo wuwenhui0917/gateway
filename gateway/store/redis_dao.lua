@@ -34,6 +34,9 @@ end
 
 --获取选择器下的规则配置
 function _M.get_rules_of_selector(plugin, store, rule_ids)
+
+    ngx.log(ngx.INFO, "selectid=")
+
     if not rule_ids or type(rule_ids) ~= "table" or #rule_ids == 0 then
         return {}
     end
@@ -320,6 +323,8 @@ function _M.init_rules_of_selector(plugin, store, selector_id)
 
     -- selector = json.decode(selector)
     local rules_ids = selector.rules or {}
+    ngx.log(ngx.INFO, plugin .. ".selector." .. selector_id .. ".rulesids&&&&&&&&&&&&&&&&&&&&&&&&&&&7",json.decode(rules_ids))
+
     local rules = _M.get_rules_of_selector(plugin, store, rules_ids)
     ngx.log(ngx.INFO, plugin .. ".selector." .. selector_id .. ".rules"..json.encode(rules))
 

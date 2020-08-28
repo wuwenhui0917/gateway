@@ -122,6 +122,7 @@ return function(plugin)
                 --     result = redisdao.load_data_by_redis(store, plugin)
                 end
                 if  config.store == "redis" then
+                    store:init()
                     result = redisdao.load_data_by_redis(store, plugin)
                 
                 end
