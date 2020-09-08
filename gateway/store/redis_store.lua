@@ -4,9 +4,8 @@
 local type = type
 local Store = require("gateway.store.base")
 -- local redis = require "resty.redis"
-local redis_cluster = require "resty.rediscluster"
+local redis_cluster = require "gateway.store.rediscluster"
 local redis = require "resty.redis"
-
 local stringy = require ("gateway.utils.stringy")
 local table_insert = table.insert
 local table_concat = table.concat
@@ -50,9 +49,13 @@ function RedisStore:new(options)
     self.store_type = "redis"
     local serverlist = options.serv_list
     local cluster = options.cluster
+    local passwd = options.password
     if not cluster then
         config.cluster = false
     end
+    if passwd then
+        config.password = passwd
+    end    
     ngx.log(ngx.INFO,"serverlist"..serverlist);
     if serv_list then
         for _dex,server in ipairs(stringy.split(serverlist,",")) do
@@ -73,13 +76,9 @@ function RedisStore:new(options)
     self.redisconfig.name="gateway-redis";
     self.redisconfig.serv_list = serv_list;
     -- self.redisconfig=config2;
-   
     config.serv_list = serv_list;
     self.redisconfige = config;
-   
     ngx.log(ngx.INFO,"configinfffffffffffffffffffffffffffffffffffffffffffffffffffffffff"..json.encode(config));
-
-    
 
     -- ngx.log(ngx.INFO,"okkkkkkkkkkkkddddddd"..connect_config);
     -- self.host=connect_config.host
@@ -128,7 +127,7 @@ function RedisStore:getRedis()
     
     
     if config.cluster then
-        ngx.log(ngx.INFO,"getRedis  connection  type is cluster ............................................");
+        ngx.log(ngx.INFO,"getRedis  connection  type is cluster ............................................"..json.encode(config));
         local redcluster,error = redis_cluster:new(config);
         if redcluster  then
             return redcluster
@@ -147,6 +146,7 @@ function RedisStore:getRedis()
         local port = 10201
         local ok, err = red:connect(ip, port)
         if red  then
+            local author,error =red:auth("passwd")
             return red
         else
             return nil
