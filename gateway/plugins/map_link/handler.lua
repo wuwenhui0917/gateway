@@ -4,23 +4,27 @@ local utils = require("gateway.utils.utils")
 local stringy = require("gateway.utils.stringy")
 local json = require("gateway.utils.json")
 local BasePlugin = require("gateway.plugins.base_handler")
+local page_data = ngx.shared.page_data
+local ngx_redirect = ngx.redirect
 local MapLinkHandler = BasePlugin:extend()
 function MapLinkHandler:new(store)
     MapLinkHandler.super.new(self, "map_link")
     self.store = store
 end
-local path="conf/pageinfo.txt"
+local path="/home/wuwenhui/works/temp/pageinfo.txt"
 
 function MapLinkHandler:init_worker()
     ngx.log(ngx.INFO, "[map_link] ", "init ...........................................................")
     local file = io.open(path, "r")
     if file then
         for line in file:lines()  do 
-            if string.byte(line)~=string.byte("!") then
-               local pageinfo = stringy.split(line,"!")
+            if string.byte(line)~=string.byte("#") then
+               local pageinfo = stringy.split(line,"#")
                local srcurl = pageinfo[1]
                local desurl=pageinfo[2]
                 if srcurl~=nil and desurl~=nil then
+                   ngx.log(ngx.INFO, " MapLinkHandler ", srcurl,"===========",desurl)
+
                    page_data:set(srcurl,desurl)
                 end
             end
@@ -30,7 +34,7 @@ function MapLinkHandler:init_worker()
 end     
 
 function MapLinkHandler:access(conf)
-    DivideHandler.super.access(self)
+    MapLinkHandler.super.access(self)
     local string_find = string.find
     local request_method = ngx.var.request_method
     local args = nil
