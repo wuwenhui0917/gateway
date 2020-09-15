@@ -33,9 +33,9 @@ function _LINK.init(store)
                 local srcurl = pageinfo[1]
                 local desurl=pageinfo[2]
                     if srcurl~=nil and desurl~=nil then
-                    ngx.log(ngx.INFO, " MapLinkHandler ", srcurl,"===========",desurl)
+                        ngx.log(ngx.INFO, " MapLinkHandler ", srcurl,"===========",desurl)
 
-                    page_data:set(srcurl,desurl)
+                        page_data:set(srcurl,desurl)
                     end
                 end
             end 
