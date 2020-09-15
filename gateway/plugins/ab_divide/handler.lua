@@ -1,3 +1,7 @@
+
+--
+-- 灰度插件处理
+--  author :wwh6
 local ipairs = ipairs
 local type = type
 

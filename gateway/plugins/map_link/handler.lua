@@ -1,3 +1,6 @@
+--
+-- 长短链接映射api：加载长短链接配置到共享缓存中
+--  author :wwh6
 local ipairs = ipairs
 local type = type
 local utils = require("gateway.utils.utils")
@@ -6,48 +9,17 @@ local json = require("gateway.utils.json")
 local BasePlugin = require("gateway.plugins.base_handler")
 local page_data = ngx.shared.page_data
 local ngx_redirect = ngx.redirect
+local link = require("gateway.plugins.map_link.link")
 local MapLinkHandler = BasePlugin:extend()
 function MapLinkHandler:new(store)
     MapLinkHandler.super.new(self, "map_link")
     self.store = store
 end
-local path="/home/wuwenhui/works/temp/pageinfo.txt"
---设置短链接配置地址
-local page_redis_key="mlink_short"
 
+--启动加载长短连接处理
 function MapLinkHandler:init_worker()
-
     local store = self.store
-    local type = store:getType()
-    if type == "redis" then
-        ngx.log(ngx.INFO, "[map_link] ", "getType is redis")
-        local info = store：getListInfo(page_redis_key,0,-1)
-        if info then
-            local listinfo = json.decode(info)
-            for pageinfo in listinfo do
-                ngx.log(ngx.INFO, "[map_link] ", pageinfo)
-            end    
-        end    
-
-    else 
-        ngx.log(ngx.INFO, "[map_link] ", "init ...........................................................")
-        local file = io.open(path, "r")
-        if file then
-            for line in file:lines()  do 
-                if string.byte(line)~=string.byte("#") then
-                local pageinfo = stringy.split(line,"#")
-                local srcurl = pageinfo[1]
-                local desurl=pageinfo[2]
-                    if srcurl~=nil and desurl~=nil then
-                    ngx.log(ngx.INFO, " MapLinkHandler ", srcurl,"===========",desurl)
-
-                    page_data:set(srcurl,desurl)
-                    end
-                end
-            end 
-            io.close(file) 
-        end
-    end    
+    link.init(store)
 end     
 
 function MapLinkHandler:access(conf)
