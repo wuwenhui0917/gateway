@@ -61,13 +61,13 @@ function RedisStore:new(options)
         for _dex,server in ipairs(stringy.split(serverlist,",")) do
             local server = stringy.split(server,":")
             ngx.log(ngx.INFO,"serverlist"..server[1].." port "..server[2]);
-            local jsonparam = {};
-            jsonparam.ip = server[1];
-            jsonparam.port = 30206;
-            -- server['ip']=server[1];
-            -- server['port']=server[2];
-            -- table_insert(serv_list,server);
-            serv_list[_dex]=jsonparam;
+            -- local jsonparam = {};
+            -- jsonparam.ip = server[1];
+            -- jsonparam.port = 30206;
+            server['ip']=server[1];
+            server['port']=server[2];
+            table_insert(serv_list,server);
+            -- serv_list[_dex]=jsonparam;
 
         end    
     end    
