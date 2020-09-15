@@ -93,4 +93,8 @@ function MySQLStore:update(opts)
     end
 end
 
+function MySQLStore:getType()
+    return "mysql"
+end
+
 return MySQLStore

@@ -122,6 +122,10 @@ function RedisStore:new(options)
 
 end
 
+function RedisStore:getType()
+    return "redis"
+end
+
 
 function RedisStore:getRedis()
     
@@ -255,9 +259,19 @@ function RedisStore:getMHashInfo(plugin,keys)
     return nil   
 end
 
+--获取列表的所有值
+function RedisStore:getListInfo(key,start,endcount)
+    ngx.log(ngx.INFO,"redis getListInfo")
+    local red=self.redis
+    if key and red then
+        return red:lrange(key,start,endcount)
+    end
+    return nil   
+end    
+
 --获取redis中的key开头的配置
 function RedisStore:getHashByKeyTag(plugin,keystag)
-    ngx.log(ngx.INFO,"%%%%%%%%%%%%%%%%%%getHashByKeyTag"..plugin.." keystag"..keystag);
+    ngx.log(ngx.INFO,"%%%%%%%%%%%%%%%%%%getHashByKeyTag"..plugin.." keystag"..keystag)
    
     if not plugin or plugin == "" then return nil end
     if not keystag or keystag == "" then return nil end
