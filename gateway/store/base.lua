@@ -13,4 +13,8 @@ function Store:get(k)
     ngx.log(ngx.DEBUG, " store \"" .. self._name .. "\" get:" .. k)
 end
 
+function Store:getType()
+    return "mysql"
+end
+
 return Store
