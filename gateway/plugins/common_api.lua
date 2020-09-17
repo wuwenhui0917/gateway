@@ -124,10 +124,7 @@ return function(plugin)
                 if  config.store == "redis" then
                     store:init()
                     result = redisdao.load_data_by_redis(store, plugin)
-                
                 end
-
-                
                 return res:json({
                     success = result,
                     msg = "succeed to get configuration in this node",
@@ -197,13 +194,8 @@ return function(plugin)
                         upsream.primarynodes=peers
                         upsream.backuppeers=bakpeers
                         nodes[u]=upsream
-
-
                     end
-
                 end
-                
-                
                 return res:json({
                     success = result,
                     data = nodes
@@ -212,15 +204,5 @@ return function(plugin)
             end
         end
     }
-
-
-    
-
-
-
-
-
-
-
     return API
 end

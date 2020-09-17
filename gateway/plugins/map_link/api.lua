@@ -15,7 +15,7 @@ api:get("/map_link/reload", function(parastore)
         link.init(store)
         res:json({
             success = true,
-            data = "hello"
+            data = "ok"
         })
     end
 end)

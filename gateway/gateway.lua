@@ -122,6 +122,10 @@ function Gateway.init_worker()
     if Gateway.data and Gateway.data.store   and Gateway.data.config.store=="redis" then
         local worker_id = ngx.worker.id()
         if worker_id == 0 then
+            -- local redisstore=Gateway.data.store
+            -- redisstore:init();
+
+
             local ok, err = ngx.timer.at(1, function(premature, store, config)
                 store:init();
                 local available_plugins = config.plugins

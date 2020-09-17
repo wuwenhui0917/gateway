@@ -16,14 +16,22 @@ function MapLinkHandler:new(store)
     self.store = store
 end
 
+
 --启动加载长短连接处理
 function MapLinkHandler:init_worker()
-    local store = self.store
-    link.init(store)
+    local redisstore = self.store
+    local ok, err = ngx.timer.at(3, 
+    function(premature,sstore)
+        link.init(sstore)
+    end, 
+    redisstore)
+
+
+   
 end     
 
-function MapLinkHandler:access(conf)
-    MapLinkHandler.super.access(self)
+function MapLinkHandler:redirect()
+    
     local string_find = string.find
     local request_method = ngx.var.request_method
     local args = nil
@@ -36,6 +44,9 @@ function MapLinkHandler:access(conf)
     local ngx_var_args = ngx_var.args
     local ngx_var_uri = ngx_var.uri
 
+    ngx.log(ngx.INFO, "[map_link>>>>>>>>>>>>>>>>>>>>>>] ", "handle ..........................................................."..ngx_var_uri)
+
+
     -- -- 获取url参数
     -- if "GET" == request_method then
     --     args = ngx.req.get_uri_args()
@@ -44,6 +55,7 @@ function MapLinkHandler:access(conf)
     --     args = ngx.req.get_post_args()
     -- end
     local to_redirect = page_data:get(ngx_var_uri)
+
     if to_redirect and to_redirect ~= ngx_var_uri then
         local redirect_status =302
         -- if redirect_status ~= 301 and redirect_status ~= 302 then

@@ -10,15 +10,16 @@ local page_redis_key="mlink_short"
 
 function _LINK.init(store)
     local type = store:getType()
-    if type == "redis" then
-        ngx.log(ngx.INFO, "[map_link] ", "getType is redis")
-        local info = store:getListInfo("mlink_short",0,-1)
-        if info then
-            local listinfo = json.decode(info)
-            if listinfo then
-                for pageinfo in listinfo do
-                    ngx.log(ngx.INFO, "[map_link] ", pageinfo)
-                end
+    if type == "redis"  then
+        -- store:init()
+        local keys = store:getHashKeys("map_link_short")
+        if keys then
+           for _, key in ipairs(keys) do
+                local value = store:getHashValue("map_link_short",key)
+                if value then
+                    page_data:set("/"..value.id,value.longLink)
+                end    
+                
             end    
             
         end    

@@ -237,6 +237,26 @@ function RedisStore:getHashInfo(plugin,key)
     return nil   
 end
 
+
+
+
+--获取hashvalue
+function RedisStore:getHashValue(key,hashkey)
+    if not key or key == "" then return nil end
+    if not hashkey or hashkey == "" then return nil end
+    local red=self.redis
+    if  red  then
+        local ok,err= red:hget(key,hashkey)
+        if ok then
+            return json.decode(ok)
+        end
+    else 
+        ngx.log(ngx.ERR,"---------------------------redis------------------------ error");
+   
+    end 
+    return nil   
+end
+
 function RedisStore:getMHashInfo(plugin,keys)
     ngx.log(ngx.INFO,"getHashByKeyTag".. type(keys));
    
@@ -267,6 +287,43 @@ function RedisStore:getListInfo(key,start,endcount)
         return red:lrange(key,start,endcount)
     end
     return nil   
+end
+--获取全部成员
+function RedisStore:getSmembers(key)
+    -- ngx.log(ngx.INFO,"redis getSmembers",key)
+    local red=self.redis
+    if key and red then
+        -- ngx.log(ngx.INFO,"redis ..................getSmembers")
+        local value =  red:smembers(key)
+        -- ngx.log(ngx.INFO,"redis ..................getSmembers"..json.encode(value))
+        return value
+
+    end
+    return nil
+
+end
+
+--获取hashmap的信息
+function RedisStore:getHashAll(key)
+    if not key then
+        return nil
+    end  
+    local red=self.redis
+    if red then
+        local values= red:hgetall(key)
+        return values
+    end
+    return nil     
+
+end
+--获取keys
+function RedisStore:getHashKeys(key)
+    local red=self.redis
+    if red then
+        local keys = red:hkeys(key)
+        return keys
+    end    
+
 end    
 
 --获取redis中的key开头的配置
