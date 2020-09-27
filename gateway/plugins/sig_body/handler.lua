@@ -31,6 +31,9 @@ end
 
 function SignatureBodyHandler:header_filter()
 
+    ngx.log(ngx.ERR, "[ SignatureBodyHandler->header_filter ]  ")
+
+
     local  tempbody = res_json()
     ngx.header["Content-Length"] = #tempbody
 end   

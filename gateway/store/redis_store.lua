@@ -126,6 +126,17 @@ function RedisStore:getType()
     return "redis"
 end
 
+--累加
+function  RedisStore:incr(key)
+    if not key or key=='' then return nil end
+    local red =self.redis
+    if red then
+        red:incr(key)
+        return "1"
+    end
+    return nil    
+end    
+
 
 function RedisStore:getRedis()
     
