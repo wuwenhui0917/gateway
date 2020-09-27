@@ -21,5 +21,35 @@ api:get("/map_link/reload", function(parastore)
 end)
 
 
+api:get("/map_link/count", function(parastore)
+    
+    return function(req, res, next)
+        local uriid =  req.query.resid
+        if not uriid or uriid =="" then 
+            res:json({
+                success = false,
+                data = "resid must not empty"
+            })
+            return 
+        end  
+        local gateway = context.gateway
+        local redisstore = gateway.data.store
+        if redisstore  and redisstore:getType() == "redis" then
+            local result = redisstore:get("shortlink/"..uriid)
+            if result then
+                res:json({
+                    success = true,
+                    data = "ok"..uriid,
+                    count=result
+                })
+            else 
+                res:json({
+                    success = false,
+                    data = "ok"..uriid
+                })
 
+            end     
+        end 
+    end
+end)
 return api

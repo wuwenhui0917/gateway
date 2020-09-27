@@ -129,13 +129,19 @@ end
 --累加
 function  RedisStore:incr(key)
     if not key or key=='' then return nil end
-    local red =self.redis
-    if red then
-        red:incr(key)
-        return "1"
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
+    local red = self.redis
+    local result,error = red:incr(key)
+    if not error  then
+        return result
     end
     return nil    
-end    
+end 
+
+   
 
 
 function RedisStore:getRedis()
@@ -224,6 +230,24 @@ end
 function RedisStore:update(opts)
     
 end
+
+function  RedisStore:get(key)
+    if not key or key == "" then return nil end
+    if not key or key=='' then return nil end
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
+    local red=self.redis
+    if red  then
+        local ok,err= red:get(key)
+        if not err then
+            return ok
+        end    
+
+    end
+    return nil    
+end  
 
 function RedisStore:getHashInfo(plugin,key)
     if not plugin or plugin == "" then return nil end

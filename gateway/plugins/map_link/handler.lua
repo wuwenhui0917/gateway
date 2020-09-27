@@ -75,7 +75,7 @@ function MapLinkHandler:redirect()
         end
         local redisstore = self.store
         if redisstore  and redisstore:getType() == "redis" then
-            redisstore:incr("shortlink"..ngx_var_uri)
+            local result = redisstore:incr("shortlink"..ngx_var_uri)
         end    
 
         ngx_redirect(to_redirect, redirect_status)
