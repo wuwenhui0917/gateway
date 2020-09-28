@@ -14,8 +14,6 @@ function _LINK.init(store)
         -- store:init()
         local keys = store:getHashKeys("map_link_short")
         if keys then
-           page_data:flush_all()
-           page_data:flush_expired()
            for _, key in ipairs(keys) do
                 local value = store:getHashValue("map_link_short",key)
                 if value then
