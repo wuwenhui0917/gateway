@@ -207,16 +207,12 @@ function RedisStore:query(opts)
     if  red  then
         local ok,error = red:get(key)
         if ok then
-            ngx.log(ngx.INFO,"redis"..key.."value="..json.encode(ok));
             return ok
         end    
  
     end    
     
     return 0;
-
-   
-  
 end
 
 function RedisStore:insert(opts)
@@ -232,7 +228,6 @@ function RedisStore:update(opts)
 end
 
 function  RedisStore:get(key)
-    if not key or key == "" then return nil end
     if not key or key=='' then return nil end
     if not self.redis then
         ngx.log(ngx.ERR,"result is null");
@@ -279,6 +274,10 @@ end
 function RedisStore:getHashValue(key,hashkey)
     if not key or key == "" then return nil end
     if not hashkey or hashkey == "" then return nil end
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
     local red=self.redis
     if  red  then
         local ok,err= red:hget(key,hashkey)
@@ -299,6 +298,11 @@ function RedisStore:getMHashInfo(plugin,keys)
     if not plugin or plugin == "" then return nil end
     if not keys or keys == "" then return nil end
     local hashtalename=plugin.."_plugin";
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
+
     local red=self.redis
     if  red  then
         local ok,error= red:hmget(hashtalename,keys)
@@ -317,6 +321,10 @@ end
 --获取列表的所有值
 function RedisStore:getListInfo(key,start,endcount)
     ngx.log(ngx.INFO,"redis getListInfo")
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
     local red=self.redis
     if key and red then
         return red:lrange(key,start,endcount)
@@ -326,6 +334,10 @@ end
 --获取全部成员
 function RedisStore:getSmembers(key)
     -- ngx.log(ngx.INFO,"redis getSmembers",key)
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
     local red=self.redis
     if key and red then
         -- ngx.log(ngx.INFO,"redis ..................getSmembers")
@@ -343,6 +355,10 @@ function RedisStore:getHashAll(key)
     if not key then
         return nil
     end  
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
     local red=self.redis
     if red then
         local values= red:hgetall(key)
@@ -353,7 +369,15 @@ function RedisStore:getHashAll(key)
 end
 --获取keys
 function RedisStore:getHashKeys(key)
+    if not key then
+        return nil
+    end  
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
     local red=self.redis
+    
     if red then
         local keys = red:hkeys(key)
         return keys
@@ -368,6 +392,11 @@ function RedisStore:getHashByKeyTag(plugin,keystag)
     if not plugin or plugin == "" then return nil end
     if not keystag or keystag == "" then return nil end
     local hashtalename = plugin.."_plugin"
+    if not self.redis then
+        ngx.log(ngx.ERR,"result is null");
+        RedisStore:init()
+    end
+    
     local red=self.redis
     local param={};
     if  red  then
