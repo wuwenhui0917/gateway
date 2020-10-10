@@ -12,7 +12,7 @@ local handle_util = require("gateway.utils.handle")
 local BasePlugin = require("gateway.plugins.base_handler")
 local extractor_util = require("gateway.utils.extractor")
 local json = require("gateway.utils.json")
-
+local script="<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"> <title>Title</title><script src=\"saturn2.js?v=1.0.1\"></script><script> window.alert(\"nihao\")</script></head><body><p>nihaoya</p></body></html>"
 
 local SignatureBodyHandler = BasePlugin:extend()
 SignatureBodyHandler.PRIORITY = 2000
@@ -33,18 +33,19 @@ function SignatureBodyHandler:header_filter()
 
     ngx.log(ngx.ERR, "[ SignatureBodyHandler->header_filter ]  ")
 
-
-    local  tempbody = res_json()
-    ngx.header["Content-Length"] = #tempbody
+    -- local  tempbody = res_json()
+    ngx.header["Content-Length"] =  #script
+    ngx.header["Content-Type"] =  "text/html; charset=UTF-8" 
 end   
 
 function SignatureBodyHandler:body_filter()
     local chunk, eof = ngx.arg[1], ngx.arg[2]  -- 获取当前的流 和是否时结束
-    local  tempbody = res_json()
-    ngx.log(ngx.ERR, "[ tempbody ] " .. chunk.." size===="..#tempbody)
+    --local  tempbody = res_json()
+    --ngx.log(ngx.ERR, "[ tempbody ] " .. chunk.." size===="..#tempbody)
+    ngx.log(ngx.ERR, "[ tempbody ] >>>>>>>>>>>>>>>>>>>>>>>>")
 
     -- ngx.header["Content-Length"] = #tempbody
-    ngx.arg[1] = tempbody
+    ngx.arg[1] = script
 
     -- local info = ngx.ctx.buf
     -- chunk = chunk or ""
